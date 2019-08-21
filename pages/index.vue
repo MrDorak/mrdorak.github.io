@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="container-fluid p-0">
       <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
         <div class="w-100">
@@ -42,14 +41,13 @@
                   <h3 class="mb-0">{{ item_taf.role }}</h3>
                   <div class="subheading mb-3">{{ item_taf.lieu }}</div>
                   <p>{{ item_taf.desc }}</p>
-                  <Details :items="item_taf.competences" >
-                    <ul class="list-inline" v-for="comps in item_taf.competences">
-                      <li v-for="(comp_details, c) in comps" :key="c" >
-                        <div v-if="c === 0" class="rounded-pill text-center text-light bg-primary mb-3">{{ comp_details }}</div>
-                        <div class="ml-3" v-else><i class="fas fa-long-arrow-alt-right"></i> {{ comp_details }}</div>
-                      </li>
-                    </ul>
-                  </Details>
+
+                  <ul class="list-inline" v-for="comps in item_taf.competences">
+                    <li v-for="(comp_details, c) in comps" :key="c" >
+                      <div v-if="c === 0" class="rounded-pill text-center text-light bg-primary mb-3">{{ comp_details }}</div>
+                      <div class="ml-3" v-else><i class="fas fa-long-arrow-alt-right"></i> {{ comp_details }}</div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -172,11 +170,9 @@
         </div>
       </section>
     </div>
-  </div>
 </template>
 
 <script>
-  import Details from '../components/Details'
   import VueScrollProgress from 'vue-scroll-progress'
 
   export default {
@@ -268,7 +264,6 @@
       },
     }),
     components: {
-      Details,
       VueScrollProgress
     }
   };
