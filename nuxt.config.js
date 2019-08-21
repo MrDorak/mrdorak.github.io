@@ -12,6 +12,7 @@ export default {
   router: {
     base: '/'
   },
+
   /*
   ** Headers of the page
   */
