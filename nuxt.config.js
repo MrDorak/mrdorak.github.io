@@ -1,10 +1,16 @@
 import pkg from './package'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/'
+  }
+} : {};
+
 export default {
   mode: 'spa',
 
   router: {
-    base: '/Personal-Website/'
+    base: '/'
   },
   /*
   ** Headers of the page
